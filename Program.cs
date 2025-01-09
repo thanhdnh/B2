@@ -106,16 +106,25 @@ public class Program
             Console.Write(element + ", ");
         Console.WriteLine("");
     }
-    static void Sort<T>(List<T> list){
-
+    static void Sort<T>(List<T> list)
+    {
+        list.Sort();
+        /*Console.WriteLine("Sorted list: ");
+        foreach(T element in list)
+            Console.Write(element + ", ");*/
     }
     static List<T> GetPythagoreanTrimplets<T>(List<T> list){
-
+        for (int i = 0; i < list.Count; ++i)
+            for (int j = i + 1; j < list.Count; ++j)
+                for (int k = j + 1; k < list.Count; ++k)
+                    if ((dynamic)list[i] * list[i] + (dynamic)list[j] * list[j] == (dynamic)list[k] * list[k])
+                        return new List<T> { list[i], list[j], list[k] };
         return null;
     }
     static int GetIntSquaredNumber<T>(List<T> list){
 
         return 0;
     }
+
   
 }
